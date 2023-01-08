@@ -29,7 +29,7 @@ async function initAds(){
     const deletedAds =  await Ad.deleteMany();
     console.log(`Se han eliminado ${deletedAds.deletedCount} anuncios.`);
     
-    // Crear anuncios iniciales
+    // Crear anuncios por defecto
 
     const defaultAds = await Ad.insertMany([
         {name: "iphone", sale: true, price: 300, image: "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D260/https://d1eh9yux7w8iql.cloudfront.net/product_images/290060_374aef9d-24fa-4d24-bb8c-f27ce27b711f.jpg", tag: "mobile"},

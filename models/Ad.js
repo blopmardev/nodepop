@@ -11,7 +11,7 @@ const adSchema = mongoose.Schema({
     tag: [{type: Array, enum: TAGS_LIST}]
 })
 
-// Añadir método estático
+// Añadir métodos estáticos
 
 adSchema.statics.list = function(filter, skip, limit, fields, sort){
     const query = Ad.find(filter);
