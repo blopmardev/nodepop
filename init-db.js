@@ -35,7 +35,8 @@ async function initAds(){
         {name: "iphone", sale: true, price: 300, image: "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D260/https://d1eh9yux7w8iql.cloudfront.net/product_images/290060_374aef9d-24fa-4d24-bb8c-f27ce27b711f.jpg", tag: "mobile"},
         {name: "bike", sale: false, price: 500, image: "https://contents.mediadecathlon.com/p2281143/k$186136114cbb9fa8ab038346682ed070/sq/bicicleta-urbana-clasica-elops-520-cuadro-bajo-28-pulgadas-6-v-azul.jpg?format=auto&f=800x0", tag: "lifestyle"},
         {name: "taladradora", sale: false, price: 450, image: "https://media.adeo.com/marketplace/LMES/82039766/1891756.png?width=650&height=650&format=jpg&quality=80&fit=bounds", tag: "work"},
-        {name: "coche", sale: true, price: 700, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaA3TermEhBifLWRUy-47yB17siGhWuJ549A&usqp=CAU", tag: "motor"}
+        {name: "coche", sale: true, price: 10000, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaA3TermEhBifLWRUy-47yB17siGhWuJ549A&usqp=CAU", tag: "motor"},
+        {name: "vestido", sale: true, price: 40, image: "https://img01.ztat.net/article/spp-media-p1/0175aab781344797b74850e440653cb7/b1a27d7130f2404f8518c912c1ed44ff.jpg?imwidth=1800&filter=packshot", tag: "lifestyle"}
     ]);
     console.log(`Se han creado ${defaultAds.length} anuncios.`)
 }

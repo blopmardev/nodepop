@@ -1,5 +1,4 @@
 'use strict'
-
 const TAGS_LIST = ["work", "lifestyle", "motor", "mobile"];
 
 const mongoose = require('mongoose');

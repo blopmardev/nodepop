@@ -49,7 +49,7 @@ app.use(function(err, req, res, next) {
 
   res.status(err.status || 500);
 
-  // si es una petición al API, responder con formato JSON
+  // si el error es de una petición al API, responder con formato JSON
   if (req.originalUrl.startsWith('/apiv1/')) {
     res.json({ error: err.message });
     return;
