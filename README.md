@@ -1,2 +1,2 @@
 # Nodepop
-**NodePop** es una API para la gestión de anuncios de compra/venta de artículos desarrollada en Node.js y permite filtrar por varios criterios.
+**NodePop** es una API para la gestión de anuncios de compra/venta de artículos desarrollada en Node.js. Además de mostrar los artículos disponibles, permite filtrar por varios criterios de búsqueda y paginar los resultados obtenidos.
