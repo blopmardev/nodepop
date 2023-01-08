@@ -3,7 +3,6 @@ const readline = require('readline');
 
 // Cargamos los modelos
 
-const Agente = require('./models/Agente');
 const Ad = require('./models/Ad');
 
 async function main(){
@@ -16,8 +15,7 @@ async function main(){
     // Conectar a la BBDD
     const connection = require('./lib/connectMongoose')
 
-    // Inicializar la colección de agentes
-    await initAgentes();
+    // Inicializar la colección de anuncios
     await initAds();
 
     // Desconectar de la BBDD
@@ -40,22 +38,6 @@ async function initAds(){
         {name: "coche", sale: true, price: 700, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaA3TermEhBifLWRUy-47yB17siGhWuJ549A&usqp=CAU", tag: "motor"}
     ]);
     console.log(`Se han creado ${defaultAds.length} anuncios.`)
-}
-
-async function initAgentes(){
-    // Borrar todos los documentos de la colección de agentes
-    const result =  await Agente.deleteMany();
-    console.log(`Se han eliminado ${result.deletedCount} agentes.`);
-    
-    // Crear agentes iniciales
-
-    const inserted = await Agente.insertMany([
-        {name: "Smith", age: 30},
-        {name: "Jones", age: 35},
-        {name: "Brown", age: 19},
-        {name: "Xena", age: 20}
-    ]);
-    console.log(`Se han creado ${inserted.length} agentes.`)
 }
 
 function question(texto){

@@ -9,7 +9,7 @@ require('./lib/connectMongoose');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const adsRouter = require('./routes/apiv1/ads');
-const agentsRouter = require('./routes/apiv1/agents');
+//const agentsRouter = require('./routes/apiv1/agents');
 
 var app = express();
 
@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/apiv1/anuncios', adsRouter);
-app.use('/apiv1/agentes', agentsRouter);
+//app.use('/apiv1/agentes', agentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
