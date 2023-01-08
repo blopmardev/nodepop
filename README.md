@@ -12,6 +12,7 @@ http://127.0.0.1:3000
    2. Node.js
    3. Mongoose 
    4. Express
+   5. EJS
 
 
 #### Instalar Mongoose
@@ -20,8 +21,11 @@ http://127.0.0.1:3000
 #### Instalar dependencias del proyecto
 ```npm install```
 
-#### Iniciar API
+#### Iniciar API en desarrollo
 ```npm run dev```
+
+#### Iniciar API en producción
+```npm start```
 
 #### Inicializar la Base de Datos
 ```node init-db.js```
@@ -32,9 +36,9 @@ http://127.0.0.1:3000
 #### Para obtener lista de tags:
 ```http://localhost:3000/apiv1/anuncios/tags```
 
-### Filtros
+## Filtros
 
-#### Filtrar por tag
+### Filtrar por tag
 
 CASO1: Artículos en Venta
 
@@ -44,10 +48,10 @@ CASO2: Artículos que la gente demanda
 
 ```http://localhost:3000/apiv1/anuncios?sale=false```
 
-#### Filtrar por nombre
+### Filtrar por nombre
 ```http://localhost:3000/apiv1/anuncios?name=b```
 
-#### Filtrar por rango de precios
+### Filtrar por rango de precios
 ```http://localhost:3000/apiv1/anuncios?min=0&&max=301```
 
 ### Filtrar por precio mínimo
