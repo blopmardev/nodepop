@@ -54,6 +54,5 @@ CASO2: Artículos que la gente demanda
 ### Filtrar por precio máximo
 ```http://localhost:3000/apiv1/anuncios?max=700```
 
-*** Ruta para las imágenes
-```http://127.0.0.1:3000/images/iphone-11.jpg
-```
+## Ruta para las imágenes
+```http://127.0.0.1:3000/images/iphone-11.jpg```
