@@ -4,9 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+require('./lib/connectMongoose');
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const adsRouter = require('./routes/ads');
+const adsRouter = require('./routes/apiv1/ads');
 
 var app = express();
 
