@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+body {
+  padding: 50px;
+  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
+  background-color: var(--ligth-grey);
+}
+:root{
+  --primary-color: #339933;
+  --secondary-color: #66cc33;
+  --accent-color: #336633;
+  --dark-grey: #262726;
+  --ligth-grey: #d4d3d3;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+a {
+  color: var(--primary-color);
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3rem;
+}
