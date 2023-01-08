@@ -11,8 +11,8 @@ const agenteSchema = mongoose.Schema({
 
 // Añadir método estático
 
-agenteSchema.statics.lista = function(filtro, skip, limit, fields, sort){
-    const query = Agente.find(filtro);
+agenteSchema.statics.lista = function(filter, skip, limit, fields, sort){
+    const query = Agente.find(filter);
     query.skip(skip);
     query.limit(limit);
     query.select(fields);

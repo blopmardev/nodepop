@@ -5,16 +5,16 @@ const TAGS_LIST = ["work", "lifestyle", "motor", "mobile"];
 const mongoose = require('mongoose');
 const adSchema = mongoose.Schema({
     name: {type: String, unique: true},
-    on_sale: {type: Boolean, index: true},
+    sale: {type: Boolean, index: true},
     price: {type: Number, index: true, min: 0},
     image: {type: String},
-    tags: [{type: String, enum: TAGS_LIST}]
+    tag: [{type: Array, enum: TAGS_LIST}]
 })
 
 // Añadir método estático
 
-adSchema.statics.list = function(filtro, skip, limit, fields, sort){
-    const query = Ad.find(filtro);
+adSchema.statics.list = function(filter, skip, limit, fields, sort){
+    const query = Ad.find(filter);
     query.skip(skip);
     query.limit(limit);
     query.select(fields);

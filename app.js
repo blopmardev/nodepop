@@ -36,9 +36,28 @@ app.use(function(req, res, next) {
 });
 
 
+app.listen(()=>{
+  console.log("Servidor arrancado en puerto 3000");
+})
 
 // error handler
 app.use(function(err, req, res, next) {
+
+  if (err.array) {
+    err.status = 422; // error de validacion
+    const errorInfo = err.array({onlyFirstError: true})[0];
+    console.log(errorInfo);
+    err.message = `Error in ${errorInfo.location}, param "${errorInfo.param}" ${errorInfo.msg}`;
+  }
+
+  res.status(err.status || 500);
+
+  // si es una petición al API, responder con formato JSON
+  if (req.originalUrl.startsWith('/apiv1/')) {
+    res.json({ error: err.message });
+    return;
+  }
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

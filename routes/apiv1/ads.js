@@ -8,6 +8,7 @@ router.get('/', async (req, res, next) =>{
       // Filtros
       const name = req.query.name;
       const price = req.query.price;
+      const sale = req.query.sale;
       const tag = req.query.tag;
 
       // Paginar
@@ -25,11 +26,15 @@ router.get('/', async (req, res, next) =>{
       if (price) {
           filter.price = price;
       }
-      if(tag){
+
+      if (tag) {
         filter.tag = tag;
+    }
+      if (sale) {
+        filter.sale = sale;
       }
 
-      const ads = await Ad.list(filter, skip, limit, fields, sort, tag)
+      const ads = await Ad.list(filter, skip, limit, fields, sort, tag, sale)
       res.json({results: ads});
       res.json(results.name)
   } catch(err){
@@ -44,7 +49,7 @@ router.post('/', async (req, res, next) => {
   try {
       const adData = req.body;
       const ad = new Ad(adData);
-      
+
       const updatedAd = await ad.save();
       res.json({result: updatedAd});
   } catch (err) {
