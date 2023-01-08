@@ -35,9 +35,9 @@ async function initAds(){
 
     const defaultAds = await Ad.insertMany([
         {name: "iphone", on_sale: true, price: 300, image: "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D260/https://d1eh9yux7w8iql.cloudfront.net/product_images/290060_374aef9d-24fa-4d24-bb8c-f27ce27b711f.jpg", tags: "mobile"},
-        {name: "bike", on_sale: false, price: 500, image: "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D260/https://d1eh9yux7w8iql.cloudfront.net/product_images/290060_374aef9d-24fa-4d24-bb8c-f27ce27b711f.jpg", tags: "mobile"},
-        {name: "tablet", on_sale: true, price: 450, image: "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D260/https://d1eh9yux7w8iql.cloudfront.net/product_images/290060_374aef9d-24fa-4d24-bb8c-f27ce27b711f.jpg", tags: "mobile"},
-        {name: "coche", on_sale: true, price: 700, image: "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D260/https://d1eh9yux7w8iql.cloudfront.net/product_images/290060_374aef9d-24fa-4d24-bb8c-f27ce27b711f.jpg", tags: "mobile"}
+        {name: "bike", on_sale: false, price: 500, image: "https://contents.mediadecathlon.com/p2281143/k$186136114cbb9fa8ab038346682ed070/sq/bicicleta-urbana-clasica-elops-520-cuadro-bajo-28-pulgadas-6-v-azul.jpg?format=auto&f=800x0", tags: "lifestyle"},
+        {name: "taladradora", on_sale: true, price: 450, image: "https://media.adeo.com/marketplace/LMES/82039766/1891756.png?width=650&height=650&format=jpg&quality=80&fit=bounds", tags: "mobile"},
+        {name: "coche", on_sale: true, price: 700, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaA3TermEhBifLWRUy-47yB17siGhWuJ549A&usqp=CAU", tags: "mobile"}
     ]);
     console.log(`Se han creado ${defaultAds.length} anuncios.`)
 }

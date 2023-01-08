@@ -8,6 +8,7 @@ router.get('/', async (req, res, next) =>{
       // Filtros
       const name = req.query.name;
       const price = req.query.price;
+      const tag = req.query.tag;
 
       // Paginar
       const skip = req.query.skip;
@@ -24,8 +25,11 @@ router.get('/', async (req, res, next) =>{
       if (price) {
           filter.price = price;
       }
+      if(tag){
+        filter.tag = tag;
+      }
 
-      const ads = await Ad.list(filter, skip, limit, fields, sort)
+      const ads = await Ad.list(filter, skip, limit, fields, sort, tag)
       res.json({results: ads});
       res.json(results.name)
   } catch(err){
@@ -39,10 +43,8 @@ router.get('/', async (req, res, next) =>{
 router.post('/', async (req, res, next) => {
   try {
       const adData = req.body;
-      // Instanciar un nuevo anuncio en memoria
       const ad = new Ad(adData);
-
-      // Guardar en la BBDD
+      
       const updatedAd = await ad.save();
       res.json({result: updatedAd});
   } catch (err) {
