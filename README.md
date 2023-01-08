@@ -37,9 +37,11 @@ http://127.0.0.1:3000
 #### Filtrar por tag
 
 CASO1: Artículos en Venta
+
 ```http://localhost:3000/apiv1/anuncios?sale=true```
 
 CASO2: Artículos que la gente demanda
+
 ```http://localhost:3000/apiv1/anuncios?sale=false```
 
 #### Filtrar por nombre
