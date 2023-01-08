@@ -9,6 +9,7 @@ router.get('/', async (req, res, next) => {
         const name = req.query.name;
         const price = req.query.price;
         const sale = req.query.sale;
+
         const tag = req.query.tag;
         const min = req.query.min;
         const max = req.query.max;
@@ -21,9 +22,9 @@ router.get('/', async (req, res, next) => {
         const fields = req.query.fields;
         const sort = req.query.sort;
 
-        const filter = {};
+        let filter = {};
         if (name) {
-            filter.name = name;
+            filter.name = RegExp("^"+name);;
         }
         if (price) {
             filter.price = price;
@@ -32,13 +33,18 @@ router.get('/', async (req, res, next) => {
         if (tag) {
             filter.tag = tag;
         }
-        
+
         if (sale) {
             filter.sale = sale;
         }
 
-        if (min && max) {
-            filter.price = { '$gte': min, '$lte': max }
+        if (min && max){
+            filter = {'$and': [{price: {'$gt': min}},{ price :{'$lt': max}}]};
+        }
+        if (min || max){
+            if(min){
+                filter.price = { $gt: min}}
+                else{filter.price = { $lt: max}}
         }
 
         const ads = await Ad.list(filter, skip, limit, fields, sort, tag, sale, min, max)
@@ -48,6 +54,24 @@ router.get('/', async (req, res, next) => {
         next(err);
     }
 })
+
+router.get('/tags',async (req,res,next)=>{
+    try{
+    //lista de tag existente
+    //obtener listado de tags
+    const adList = await (Ad.list())
+    const l_tag = []
+    for (let i = 0; i < adList.length; i++) {
+        for (let j = 0; j < (adList[i].tag).length; j++){
+            if (!(l_tag.includes(adList[i].tag[j]))){
+                l_tag.push(adList[i].tag[j])
+            }
+        }
+    }
+    res.json({l_tag});
+    }catch(error){
+        next(error)
+    }})
 
 //POST /apiv1/anuncios (body=adData)
 //Crear un anuncio
