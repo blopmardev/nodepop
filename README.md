@@ -15,44 +15,45 @@ http://127.0.0.1:3000
 
 
 #### Instalar Mongoose
-npm install mongoose
+```npm install mongoose```
 
 #### Instalar dependencias del proyecto
-npm install
+```npm install```
 
 #### Iniciar API
-npm run dev
+```npm run dev```
 
 #### Inicializar la Base de Datos
-node init-db.js
+```node init-db.js```
 
 #### Para obtener lista de Anuncios:
-http://localhost:3000/apiv1/anuncios
+```http://localhost:3000/apiv1/anuncios```
 
 #### Para obtener lista de tags:
-http://localhost:3000/apiv1/anuncios/tags
+```http://localhost:3000/apiv1/anuncios/tags```
 
 ### Filtros
 
 #### Filtrar por tag
 
 CASO1: Artículos en Venta
-http://localhost:3000/apiv1/anuncios?sale=true
+```http://localhost:3000/apiv1/anuncios?sale=true```
 
 CASO2: Artículos que la gente demanda
-http://localhost:3000/apiv1/anuncios?sale=false
+```http://localhost:3000/apiv1/anuncios?sale=false```
 
 #### Filtrar por nombre
-http://localhost:3000/apiv1/anuncios?name=b
+```http://localhost:3000/apiv1/anuncios?name=b```
 
 #### Filtrar por rango de precios
-http://localhost:3000/apiv1/anuncios?min=0&&max=301
+```http://localhost:3000/apiv1/anuncios?min=0&&max=301```
 
 ### Filtrar por precio mínimo
-http://localhost:3000/apiv1/anuncios?min=100
+```http://localhost:3000/apiv1/anuncios?min=100```
 
 ### Filtrar por precio máximo
-http://localhost:3000/apiv1/anuncios?max=700
+```http://localhost:3000/apiv1/anuncios?max=700```
 
 *** Ruta para las imágenes
-http://127.0.0.1:3000/images/iphone-11.jpg
+```http://127.0.0.1:3000/images/iphone-11.jpg
+```
