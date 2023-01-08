@@ -13,27 +13,32 @@ http://127.0.0.1:3000
    3. Mongoose 
    4. Express
 
-***** Instalar Mongoose
+
+#### Instalar Mongoose
 npm install mongoose
 
-***** Iniciar API
+#### Instalar dependencias del proyecto
+npm install
+
+#### Iniciar API
 npm run dev
 
-**** Inicializar la Base de Datos
+#### Inicializar la Base de Datos
 node init-db.js
 
-
-******** Para obtener lista de Anuncios:
+#### Para obtener lista de Anuncios:
 http://localhost:3000/apiv1/anuncios
 
-****Para obtener lista de tags:
+#### Para obtener lista de tags:
 http://localhost:3000/apiv1/anuncios/tags
 
 ### Filtros
 
 #### Filtrar por tag
+
 CASO1: Artículos en Venta
 http://localhost:3000/apiv1/anuncios?sale=true
+
 CASO2: Artículos que la gente demanda
 http://localhost:3000/apiv1/anuncios?sale=false
 
